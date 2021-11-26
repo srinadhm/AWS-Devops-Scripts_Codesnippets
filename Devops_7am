@@ -1,0 +1,80 @@
+Introduction and installation of needed software_1 ---- 1h:20 min completed 
+Devops_Lifecycle vs waterfall vs Agile Methodology_2 ------ 58 min  completed
+How to Create Ec2 Instance and connect to it with Mobaxterm_Putty_GIT Bash_3 --- 1h 08 min completed
+EBS & EFS & S3 & IAM_4 ----- 1h 15 min
+Linux directory structure_5 ---- 1h 10 min completed
+File_Permissions_ACL_UserManagement_6 ---- 1h 22 min completed
+Linux Package management_Tomcat_Mongodb_SonarQube_Grafana_7 ---- 1h 08 min completed
+Install and Change Tomcat and Jenkins port number & Install mongodb on rhel 8_8 ----- 1h 02 min completed
+Setup ssh & rsync between two server's_9 ------ 54 min completed
+Nfs server setup on Amazon Linux 2_10 ----- 58 min 
+Vpc peering between two regions on same account__11  ---- 54 min
+EFS_Python IDE_VisualStudio_12 ------- 55 min
+NFS Utils_13 ----- 46 min
+-----------------------Shell Scripting-------------------
+Linux Commands - awk,sed,cut_14 ---- 1h 06 min completed 
+Shell Scripting_15 ---- 57 min completed
+Setup Postgresql in Amazon Linux_16 ------ 49 min completed
+RDS_Postgresql_EC2 Connect_17 --- 1h 04 min  got idea how to create rds instance and connect using sql workbench
+Shell Script_Variables_Loops_Arrays_18 ---- 57 min completed
+Bash test Operators and IO Redirection_19 ------ 1h 1 min completed
+Shell Script String Operations_Mysql Install in Amazon Linux_20  ---- 45 min completed
+Shell script with mysql backup and restore_21 ------ 59 min got idea how to restore and back up
+Git_Git flow_Branching Strategy_22 ------  56 min completed 
+-------------------------------Jenkins -----------------------------------------
+Spring boot project using Maven_23  ------- 1h 09 min completed ( clone the repo from git build the project using maven run the jar/war file using maven running the application in different envs)
+Create Jenkins FreeStyle and Maven and  Pipeline with an Example_24 ---- 58 min completed (how to create different jobs in jenkins) 
+Maven Integration with SonarQube and Nexus_25 ----- 1h 24 min (Java11 installation and sonarqube installation, integrate with maven,nexus installation integrate with maven and deploy maven project to nexus repository)
+Code Analysis with Jenkins and Sonar integration_26 ---- 1h 06 min 
+Jenkins_CI_27 ---- 6 min 
+Jenkins CI with Nexus_28 ----- 53 min 
+Building your CI_CD Pipeline on AWS_29 ---- 1h 26 min 
+Job Description Discussion & Apache Kafka Setup, Gradle,Terraform Installation_30 ---- 1h 17 min 
+Deploy War file to Tomcat server_31  ---- 52 min 
+------------------------------------ Ansible and Terraform,Packer  and Jenkins Integration with Ansible ------------------------------------------------
+what is ansible and How it works_32 ----- 1h 45 min --- Install ansible , install java, maven in node machines usage of different modules)
+Ansible Practical_33 ---- 1h 23 min 
+EC2_Secrets Manager_Ansible_Terraform_34 --- 1h 03 min 
+Create Secrets Manager using terraform_35 ---- 1h 03 min 
+Create ec2 instance using Ansible Playbook and Terraform script_36 --- 56 min 
+Create Mutiple Instances and s3 bucket using Terraform Script_37 --- 1h 03 min 
+Create Ami manually and using Hashicorp Packer_38 ---- 46 min 
+Spring Boot - Spring Data JPA - MySQL Example_39 --- 49 min 
+Maven_Java_40 --- 53 min 
+Jenkins_CI_CD_Ansible_41 --- 52 min 
+---------------------------------------- Lambda function serverless computing --------------------------------
+Terraform s3 bucket java-maven-gradle-sonaqube-on-amazon-linux-2_42 ---- 48 min 
+create-python-lambda-to-stop-start-ec2-instance_43  ----- 54 min 
+Lambda_s3_IAM_44 ---- 55 min 
+Lambda_s3_mysql_python_45  --- 53 min 
+Lambda_rds_ec2_46 ---- 1h 02 min 
+--------------------------------------------- Docker -------------------------
+Docker_47 ---- 56 min 
+Docker_file_build_push_pull_container_run_48 ---- 51 min
+Jenkins_Integration_Docker_49 --- 49 min 
+Docker_Jenkins_CI_groovy_50 ---- 56 min 
+Setup Jenkins master_linux slave_linux machine_51 --- 56 min 
+Setup Jenkins master_linux slave_windows machine_52 --- 52 min 
+Dockerize_python_nodejs app and Docker compose_53 --- 58 min 
+Dockerize_dotnet_app_54 ---- 48 min 
+Dockerize_Angularjs and Reactjs apps_55 --- 49 min 
+docker_volumes_56 ---- 53 min 
+Docker_Networking_Swarm_57 ----- 1h 06 min 
+---------------------------------------Kubernetes----------------------------------------
+Kubernetes_Intro_58 --- 2h 16 min 
+Kubernetes_Cluster_59 --- 1h 58 min 
+Kubernetes_ReplicationController vs Replica Sets_60 --- 56 min 
+Kubernetes_Volumes_61 ---- 1h 52 min 
+Kubernetes_kops vs eks_62 ---- 47 min 
+Kubernetes_Jenkins_cicd_63 ---- 57 min 
+Kubernetes_Taint and toleration_64 ---- 1h 02 min  
+Kubernetes_pod_autoscaler_65 ---- 56 min 
+Monitoring and Logging_66 ----- 56 min 
+Kubernetes_pod_clusterautoscaler_67 ---- 54 min 
+Kubernetes application deployment in production env
+Kubernetes deployment startegies
+
+ 
+
+
+

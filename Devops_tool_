@@ -1,0 +1,374 @@
+Source code management tool Git 
+Build tool Maven
+Artifactory tool Neuxs
+Code Quality Sonarqube 
+CICD tool Jenkins
+Configuration Management tool Ansible
+Containerization tool Docker 
+Container Orchestration tool Kubernetes
+Infrastructure as code tool Terraform
+Server less computing Lambda
+Monitoring tool Promotheus and Grafana 
+
+---------------------------------
+1.Programming languages 
+Java 
+Python 
+Scala 
+Groovy 
+Go 
+R 
+Nodejs 
+.Net 
+Angular js 
+React js 
+
+2.Server Administration 
+Windows 
+
+Linux :
+Debian
+Ubuntu
+Red Hat Enterprise Linux
+CentOS
+Fedora
+OpenSUSE
+
+Unix : 
+Oracle Solaris 
+IBM AIX
+HP-UX
+
+
+3.Network and Security (Tcp/Ip Fundamentals) and  Protocols
+
+SSH 
+What is SSH
+Conf files 
+Port number 
+
+DNS 
+HTTP
+HTTPS
+FTP
+NFS
+DHCP
+SAMBA
+SMTP 
+SSL
+TLS
+SquirrelMail
+
+4.Servers 
+
+Webserver : 
+Apache
+Nginx
+Tomcat
+Jetty 
+Jboss
+IBm websphere
+Oracle weblogic
+
+Cache : 
+Redis
+Memcache
+Neo4j
+
+Databases
+ 
+Sql : 
+Oracle
+Mysql 
+Postgresql
+Mariadb,Derby DB 
+Postgresql
+Mssql server 
+
+Nosql : 
+
+Mongodb 
+Cassandra
+Dynamo db
+Google Datastore
+
+5.Infrastructure as code 
+Configuration management : 
+Ansible
+Puppet
+Chef
+Saltstack
+Openshift
+
+Container : 
+Docker 
+Rkt
+Lxc 
+
+Container Orchestration : 
+K8s
+Openshift
+Nomad
+Docker swarm
+
+Infrastructure Provisioning : 
+Terraform
+Aws Cloud formation 
+Azure template 
+Google Deployment manager 
+
+6.CI/CD
+Jenkins 
+Travis CI 
+Circle CI Gitlab CI 
+Teamcity 
+Aws Code pipeline 
+Google Codebuild  
+Github action 
+Bitbucket pipeline 
+Bamboo
+
+7. Monitoring and Logging 
+
+Monitoring : 
+Zabbix 
+Nagios 
+AWS Cloud watch 
+Promotheus 
+Grafana Datadog 
+Newrelic 
+Checkmk
+
+Logging : 
+Elk
+Splunk
+Graylog
+Fluentd
+
+8.Cloud Platforms
+Aws 
+Azure 
+Google Cloud platform 
+Openshift 
+All cloud ( auto cloud ) 
+IBm bluemix
+PCF
+
+9.Source Code Management 
+Git 
+Svn 
+Bitbuket 
+Gitlab
+
+10. Build tools 
+Maven 
+Gradle 
+Ant 
+
+11.Repository Managers
+Nexus
+Jfrog
+
+12.Code Quality tools 
+Sonarqube 
+Checkstyle 
+Pmd 
+
+13.API testing tools
+https://nordicapis.com/top-25-api-testing-tools/
+
+Postman 
+SoapUI 
+Apigee 
+Rest Assured 
+Jmeter  
+
+14.Scripting Languages 
+Shell Script 
+Power shell 
+Python Scripting 
+
+15.Message Broker
+Active MQ 
+Kafka 
+Rabbitmq
+
+16.Python Modules to Manage aws infrastructure and Run Docker images 
+Boto
+Boto3
+lxml
+Docker.py
+
+17.Gitops Continuous Deployment for cloud native applications
+
+https://www.gitops.tech/
+
+https://dzone.com/articles/30-tools-list-for-gitops 
+
+
+FluxCd
+Argo CD
+Gitkube
+Jenkins X 
+Terragrunt 
+WKSctl
+Heml operator 
+Werf 
+
+18.Muitl-Cloud Continuous Deploy / Muitl-Cloud CI-CD pipelines 
+
+Spinnaker
+Aws Code Deploy 
+Octopus deploy
+Code fresh
+
+19.Linux Utlity tools / Aws 
+
+Curl 
+Wget
+Aws cli
+jenkins cli
+tar
+zip/gunzip
+awk
+sed
+cut
+tr
+head
+tail
+find
+locate
+ls/ll
+grep
+ifconfig
+netstat
+ping
+pip
+service/systemctl
+editors vi,vim,nano
+
+20.Integrated Development Environment tools to write python script or terraform code
+
+Visual Studio code  
+STS 
+Eclipse
+
+21. Identical Machine Images / Virtual Machine Images 
+
+Vagrant 
+Packer
+
+22.Secrets Management tool 
+
+Hashicorp vault
+Aws secrets manager 
+Azure key vault 
+Docker secrets 
+Knox 
+Akeyless vault
+
+23.Open Source distributed Microservice based 
+Hashicorp Consul
+Istio service mesh
+Apigee
+AWS App Mesh
+Envoy
+Conduit
+Linkerd (Linkerd is a service mesh for Kubernetes)
+Kuma  (modern Envoy-based service mesh that can run on every cloud)
+Apache ServiceComb (Apache ServiceComb provides a complete open-source microservices solution that integrates the open-source ecosystem)
+Network Service Mesh (Network Service Mesh frees individual Kubernetes Pods to network with other workloads across multiple clusters/clouds using a simple set of APIs designed to facilitate attaching those Pods to zero or more “Network Services” that provide exactly the Connectivity Security Observability)
+Openshift Service Mesh by Redhat (Red Hat OpenShift Service Mesh provides a platform for behavioral insight and operational control over your networked microservices in a service mesh. With Red Hat OpenShift Service Mesh, you can connect, secure, and monitor microservices in your OpenShift Container Platform environment)
+
+
+
+24.Incident and Change management tools
+
+BMC Remedy 
+Servicenow 
+Jira 
+TFS (Team Foundation Server )
+
+
+
+25.Open Source LoadBalancer tools 
+Nginx 
+HAProxy 
+Envoy 
+Traefik 
+Aws Load Balancer (ALB) 
+Seesaw 
+Load Master by Kemp 
+Zevenet 
+Neutrino  
+Pen 
+Go Between 
+
+----------------------------
+
+
+
+
+EC2
+S3
+IAM
+Cloud Watch
+VPC
+ELB
+ASG
+aws-cli
+
+-------------
+
+Baswibaby@gmail.com
+@Baswi417
+
+i-0fb4b3cb5686b5b7b
+
+aws ec2 get-console-output     --instance-id i-0fb4b3cb5686b5b7b
+
+------------
+
+MUPPARAJU SRINADH	MOTHER	37102200010929	Confirmed	SYNB0003710
+
+
+
+
+
+Main commands:
+  init          Prepare your working directory for other commands
+  validate      Check whether the configuration is valid
+  plan          Show changes required by the current configuration
+  apply         Create or update infrastructure
+  destroy       Destroy previously-created infrastructure
+
+All other commands:
+  console       Try Terraform expressions at an interactive command prompt
+  fmt           Reformat your configuration in the standard style
+  force-unlock  Release a stuck lock on the current workspace
+  get           Install or upgrade remote Terraform modules
+  graph         Generate a Graphviz graph of the steps in an operation
+  import        Associate existing infrastructure with a Terraform resource
+  login         Obtain and save credentials for a remote host
+  logout        Remove locally-stored credentials for a remote host
+  output        Show output values from your root module
+  providers     Show the providers required for this configuration
+  refresh       Update the state to match remote systems
+  show          Show the current state or a saved plan
+  state         Advanced state management
+  taint         Mark a resource instance as not fully functional
+  test          Experimental support for module integration testing
+  untaint       Remove the 'tainted' state from a resource instance
+  version       Show the current Terraform version
+  workspace     Workspace management
+
+Global options (use these before the subcommand, if any):
+  -chdir=DIR    Switch to a different working directory before executing the
+                given subcommand.
+  -help         Show this help output, or the help for a specified subcommand.
+  -version      An alias for the "version" subcommand.
+  
+  
+  ADD v/s COPY
+  CMD v/s ENTRYPOINT v/s Run
+  

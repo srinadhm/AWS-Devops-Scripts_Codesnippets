@@ -1,0 +1,231 @@
+1.Programming languages 
+Java 
+Python 
+Scala 
+Groovy 
+Go 
+R 
+Nodejs 
+.Net 
+Angular js 
+React js 
+2.Server Administration 
+Windows 
+Linux :
+Debian
+Ubuntu
+Red Hat Enterprise Linux
+CentOS
+Fedora
+OpenSUSE
+Unix : 
+Oracle Solaris 
+IBM AIX
+HP-UX
+3.Network and Security (Tcp/Ip Fundamentals) and  Protocols
+SSH
+DNS
+HTTP
+HTTPS
+FTP
+NFS
+DHCP
+SAMBA
+SMTP 
+SSL
+TLS
+SquirrelMail
+4.Servers 
+Webserver : 
+Apache
+Nginx
+Tomcat
+Jetty 
+Jboss
+IBm websphere
+Oracle weblogic
+Cache : 
+Redis
+Memcache
+Neo4j
+Databases
+ Sql : 
+Oracle
+Mysql 
+Postgresql
+Mariadb,Derby DB 
+Postgresql
+Mssql server 
+Nosql : 
+Mongodb 
+Cassandra
+Dynamo db
+Google Datastore
+5.Infrastructure as code 
+Configuration management : 
+Ansible
+Puppet
+Chef
+Saltstack
+Openshift
+Container : 
+Docker 
+Rkt
+Lxc 
+Container Orchestration : 
+K8s
+Openshift
+Nomad
+Docker swarm
+Infrastructure Provisioning : 
+Terraform
+Aws Cloud formation 
+Azure template 
+Google Deployment manager 
+6.CI/CD
+Jenkins 
+Travis CI 
+Circle CI Gitlab CI 
+Teamcity 
+Aws Code pipeline 
+Google Codebuild  
+Github action 
+Bitbucket pipeline 
+Bamboo
+7. Monitoring and Logging 
+Monitoring : 
+Zabbix 
+Nagios 
+AWS Cloud watch 
+Promotheus 
+Grafana Datadog 
+Newrelic 
+Checkmk
+Logging : 
+Elk
+Splunk
+Graylog
+Fluentd
+8.Cloud Platforms
+Aws 
+Azure 
+Google Cloud platform 
+Openshift 
+All cloud ( auto cloud ) 
+IBm bluemix
+PCF
+9.Source Code Management 
+Git 
+Svn 
+Bitbuket 
+Gitlab
+10. Build tools 
+Maven 
+Gradle 
+Ant 
+11.Repository Managers
+Nexus
+Jfrog
+12.Code Quality tools 
+Sonarqube 
+Checkstyle 
+Pmd 
+13.API testing tools
+Postman 
+SoapUI 
+Apigee 
+Rest Assured 
+Jmeter  
+14.Scripting Languages 
+Shell Script 
+Power shell 
+Python Scripting 
+15.Message Broker
+Active MQ 
+Kafka 
+Rabbitmq
+16.Python Modules to Manage aws infrastructure and Run Docker images 
+Boto
+Boto3
+lxml
+Docker.py
+17.Gitops Continuous Deployment for cloud native applications
+FluxCd
+Argo CD
+Gitkube
+Jenkins X 
+Terragrunt 
+WKSctl
+Heml operator 
+Werf 
+18.Muitl-Cloud Continuous Deploy / Muitl-Cloud CI-CD pipelines 
+Spinnaker
+Aws Code Deploy 
+Octopus deploy
+Code fresh
+19.Linux Utlity tools / Aws 
+Curl 
+Wget
+Aws cli
+jenkins cli
+tar
+zip/gunzip
+awk
+sed
+cut
+tr
+head
+tail
+find
+locate
+ls/ll
+grep
+ifconfig
+netstat
+ping
+pip
+service/systemctl
+editors vi,vim,nano
+20.Integrated Development Environment tools to write python script or terraform code
+Visual Studio code  
+STS 
+Eclipse
+21. Identical Machine Images / Virtual Machine Images 
+Vagrant 
+Packer
+22.Secrets Management tool 
+Hashicorp vault
+Aws secrets manager 
+Azure key vault 
+Docker secrets 
+Knox 
+Akeyless vault
+23.Open Source distributed Microservice based 
+Hashicorp Consul
+Istio service mesh
+Apigee
+AWS App Mesh
+Envoy
+Conduit
+Linkerd 
+Kuma  
+Apache ServiceComb 
+Network Service Mesh 
+Openshift Service Mesh by Redhat 
+24.Incident and Change management tools
+BMC Remedy 
+Servicenow 
+Jira 
+TFS (Team Foundation Server )
+25.Open Source LoadBalancer tools 
+Nginx 
+HAProxy 
+Envoy 
+Traefik 
+Aws Load Balancer (ALB) 
+Seesaw 
+Load Master by Kemp 
+Zevenet 
+Neutrino  
+Pen 
+Go Between

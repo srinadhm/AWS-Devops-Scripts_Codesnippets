@@ -1,0 +1,109 @@
+Kubernetes :
+==========================================
+1) what is taint and toleration 
+2) node affinity an pod affinity 
+3) how to check the logs of a pod or deployment?
+4) how to check how many pods are running
+5) what are deployment strategy used in your project
+6) what is init container
+7) what is statefullset
+8) what is ingress
+9) difference between headfull and headless service
+10) difference between secret and configmap
+11) what is livenessprobe and readynesspeobe
+12) how to access other pods in a cluster
+13) what is a pod
+14) how you will make sure that the database should start first and then application
+15) Types of storage class used in your project
+16) difference between statefullset and stateless
+17) describe kubernetes architecture
+18) difference between PV and pvc
+19) 2 containers are running inside a pod if one container goes down then will it affect other running container
+20)  Update the password in secret without restarting the pod or deployment ,is it possible ?
+21) how to rollback the deployment?
+22) what is the reason for pod eviction?
+22) pod is in pending state ,what are the possible reasons?
+23) how you will make sure that in rolling update strategy 2 pods are always available?
+24) crashloopbackoff, what are the possible reasons?
+25) why you are using 3 master node in production?
+26) how you will make sure that pod should be running on a specific node?
+27) how to check what are the activities performed by the container while creating the pod
+28) how to get the ip of a pod ?
+29) which network plugin you are using?
+30) how you are monitoring the kubernetes cluster and the containers
+
+#################
+1.difference between IAM role and IAM user.
+2.What are the policies that you can set for your users’ passwords.
+3.What are the different types of load balancers in AWS?
+4.How do you auto-delete old snapshots?
+5.Can you take a backup of EFS like EBS?
+6.What is the difference between EBS and Instance Store?
+7.How can you add an existing instance to a new Auto Scaling group?
+8.How do you monitor Amazon VPC?
+9.Difference between s3 storage and ebs storage?
+10.What are the differences between NAT Gateways and NAT Instances
+11.What is Agent Directive in Jenkins?
+12.How can You Clone a Git Repository via Jenkins?
+13.What are the features of Minikube?
+14.What is AMI?
+15.In S3 how many buckets can be created?
+16.Can a AMI be shared?
+17.How many Elastic IPs can you create?
+18.Can you ping the router or default gateway that connects your subnets?
+19.What is the use of Subnets?
+20.can we copy a jenkins job to another jenkins server?
+21.What is the use of Bac
+27.What are kubernetes objects you are using in your pr
+28.Use of Cluster IP and Nodeport?
+29.Why Daemon sets are required for Kubernetes?
+30.What is use of service account?
+31.Do you know high availability in a pod level?
+32.What is webhooks and how it works?
+33.Difference between Add and copy in dockerfile?
+34.how to check for reason behind any pod failure?
+35.how to do exception handling in cicd pipeline?
+36.write a script when cpu usage reach 80% it will send a mail?
+37.how to pass docker hub username and passwd in cicd pipeline so that it will deploy in docker container?
+38.what is sidecar container?
+39.if there is 2 versions of a application is deployed in kubernetes,and you want send some traffic to ver1 and rest traffic to ver 2,then how to do it?
+40.difference between ebs and efs?
+41.diff between IAM role and user,brief about IAM policy?
+42.what is aws wax?
+43.what is function as a code?
+44.What is parallel in declarative pipeline?
+45.How to copy a jenkins job to another server?
+46.Difference between git fetch and pull?
+47.Difference between copy and Add in dockerfile?
+48.Can we use multiple Entrypoints in dockerfile and if yes then which one will execute first?
+49.What is pv,pvc and storageclass in kubernetes?
+50.what is Daemonset in kubernetes?
+
+
+########################
+1. Why terraform
+2. Variables in terraform
+3. Local & Dynamic blocks in terraform
+4. Commands in terraform
+5. Remote states in terraform
+6. Connecting local machine to Terraform cloud
+7. Modules in terraform
+8. Creating VPC on AWS
+9. Creating NAT and internet gateway
+10. Creating public and private subnets
+11. Creating EC2 instances
+12. Configuring S3 bucket for backend state
+13. Implementing auto scaling and load balancing
+14. Implementing RDS
+15. Terraform secret injection
+16. Terraform Plugins
+17. Implementing Kubernetes on terraform
+
+
+Git commands
+Jenkins pipeline
+Ansible Playbook yaml file
+Docker file 
+Kubernetes yaml file 
+Terraform tf file
+Lambda function 

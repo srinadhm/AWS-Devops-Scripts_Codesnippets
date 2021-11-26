@@ -1,0 +1,67 @@
+withCredentials([usernamePassword(credentialsId: 'dockerhub_credentials', passwordVariable: 'password', usernameVariable: 'username')]) {
+    // some block
+}
+
+Docker file 
+FROM java:8
+ADD ./target/gs-spring-boot-0.1.0.jar app.jar
+RUN bash -c 'touch /app.jar'
+ENTRYPOINT ["java","-jar","app.jar"]
+
+Docker credentials
+Username: srinadhdocker
+Password : Srinadh@94
+
+https://docs.ansible.com/ansible/2.5/modules/docker_container_module.html
+
+
+Jenkins-git-maven-docker Pipeline Script (Docker CI Script)
+pipeline{
+    agent any
+    tools { 
+        maven 'maven-3.8.1' 
+    }
+    stages{
+        stage('git checkout'){
+            steps{
+                git 'https://github.com/cloudtechmasters/springboohello-CICD.git'
+            }
+        }
+        stage('Build Maven'){
+            steps{
+                sh 'mvn clean package'
+            }
+        }
+        stage("Docker Image"){
+            steps{
+                sh "docker build -t srinadhdocker/springboothello:${BUILD_NUMBER} ."
+            }
+        }
+        stage("Docker Push"){
+            steps{
+                withCredentials([usernamePassword(credentialsId: 'dockerhub_credentials', passwordVariable: 'password', usernameVariable: 'username')]) {
+                    sh "docker login -u ${username} -p ${password}"
+                }
+                sh "docker push srinadhdocker/springboothello:${BUILD_NUMBER}"
+            }
+        }
+    }
+}
+
+Ansible-CD Pipeline --- 
+
+pipeline{
+    agent any
+    stages{
+        stage(''){
+            steps {
+               sh """ sudo ansible-playbook  /root/run_docker_container.yml --extra-vars '{"dockertag":"${params.dockertag}"}' """
+            }
+        }
+    }
+}
+
+
+Lambda,EBS,Cloud Formation
+how to create aws resources/instances using terraform or cloud formation template
+

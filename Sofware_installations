@@ -1,0 +1,600 @@
+Java,Git,Jenkins,Maven,Python,Docker
+Jenkins
+Git
+ELK
+Promotheus/Grafana
+Sonarcube
+Docker/Kubernetes
+Ansible 
+Packer
+Terraform
+Mysql
+Mongodb
+Rabbitmq/kafka
+
+--------------------
+EC2
+Security Groups
+S3
+IAM
+SNS,SQS,
+Amazon cli
+RDS
+EBS
+Autoscaling
+VPC
+Load balancer
+lambda function
+------------------
+
+
+Java Installation ( java 1.8)
+yum install java-1.8.0-openjdk java-1.8.0-openjdk-devel -y
+
+Run below commands to install Java 11 on Amazon Linux:
+
+sudo amazon-linux-extras install java-openjdk11 -y
+
+java -version
+openjdk version "1.8.0_282"
+OpenJDK Runtime Environment (build 1.8.0_282-b08)
+OpenJDK 64-Bit Server VM (build 25.282-b08, mixed mode)
+
+alternatives --config java
+
+There are 2 programs which provide 'java'.
+
+  Selection    Command
+-----------------------------------------------
+*+ 1           java-1.8.0-openjdk.x86_64 (/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.302.b08-0.amzn2.0.1.x86_64/jre/bin/java)
+   2           java-11-openjdk.x86_64 (/usr/lib/jvm/java-11-openjdk-11.0.12.0.7-0.amzn2.0.2.x86_64/bin/java)
+
+Enter to keep the current selection[+], or type selection number: 2
+[root@ip-172-31-1-5 ~]# java -version
+openjdk version "11.0.12" 2021-07-20 LTS
+OpenJDK Runtime Environment 18.9 (build 11.0.12+7-LTS)
+OpenJDK 64-Bit Server VM 18.9 (build 11.0.12+7-LTS, mixed mode, sharing)
+
+
+
+Maven Installation 
+https://maven.apache.org/download.cgi
+
+https://dlcdn.apache.org/maven/maven-3/3.8.3/binaries/apache-maven-3.8.3-bin.tar.gz
+
+wget https://dlcdn.apache.org/maven/maven-3/3.8.3/binaries/apache-maven-3.8.3-bin.tar.gz
+tar -xvzf apache-maven-3.8.3-bin.tar.gz
+vi /etc/profile.d/maven.sh
+export MAVEN_HOME=/opt/apache-maven-3.8.3
+export PATH=$PATH:$MAVEN_HOME/bin
+source /etc/profile.d/maven.sh
+
+5684015be75879effdc855ee92790e56937852e4 
+
+mvn sonar:sonar -Dsonar.host.url=http://54.87.44.29:9000/  -Dsonar.login=5684015be75879effdc855ee92790e56937852e4 -Dsonar.java.binaries=target/classes
+
+ANALYSIS SUCCESSFUL, you can browse http://54.87.44.29:9000/dashboard?id=org.springframework%3Ags-spring-boot
+[INFO] Note that you will be able to access the updated dashboard once the server has processed the submitted analysis report
+[INFO] More about the report processing at http://54.87.44.29:9000/api/ce/task?id=AXplhNKHuehsY6R8-8SN
+
+
+
+mvn --version
+Apache Maven 3.8.1 (05c21c65bdfed0f71a2f2ada8b84da59348c4c5d)
+Maven home: /opt/apache-maven-3.8.1
+Java version: 1.8.0_282, vendor: Red Hat, Inc., runtime: /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.282.b08-1.amzn2.0.1.x86_64/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.231-173.361.amzn2.x86_64", arch: "amd64", family: "unix"
+
+Gradle Installation
+wget https://services.gradle.org/distributions/gradle-6.9-bin.zip
+unzip gradle-6.9-bin.zip
+/opt/gradle-6.9/bin/gradle -v
+ 
+vi /etc/profile.d/gradle.sh
+export GRADLE_HOME=/opt/gradle-6.9
+export PATH=$PATH:$GRADLE_HOME/bin
+source /etc/profile.d/gradle.sh
+ gradle -v 
+
+Gradle 6.9
+------------------------------------------------------------
+
+Build time:   2021-05-07 07:28:53 UTC
+Revision:     afe2e24ababc7b0213ccffff44970aa18035fc0e
+
+Kotlin:       1.4.20
+Groovy:       2.5.12
+Ant:          Apache Ant(TM) version 1.10.9 compiled on September 27 2020
+JVM:          1.8.0_282 (Red Hat, Inc. 25.282-b08)
+OS:           Linux 4.14.232-177.418.amzn2.x86_64 amd64
+
+
+Git Installation
+yum install git -y
+git --version
+git version 2.23.4
+
+Docker Installation
+yum install docker -y
+docker --version
+Docker version 20.10.4, build d3cb89e
+rpm -qa | grep docker
+docker-20.10.4-1.amzn2.x86_64
+service docker status
+Redirecting to /bin/systemctl status docker.service
+● docker.service - Docker Application Container Engine
+   Loaded: loaded (/usr/lib/systemd/system/docker.service; disabled; vendor preset: disabled)
+   Active: inactive (dead)
+     Docs: https://docs.docker.com
+service docker start
+Redirecting to /bin/systemctl start docker.service
+service docker status
+Redirecting to /bin/systemctl status docker.service
+● docker.service - Docker Application Container Engine
+   Loaded: loaded (/usr/lib/systemd/system/docker.service; disabled; vendor preset: disabled)
+   Active: active (running) since Sat 2021-05-22 07:32:13 UTC; 26s ago
+     Docs: https://docs.docker.com
+  Process: 3999 ExecStartPre=/usr/libexec/docker/docker-setup-runtimes.sh (code=exited, status=0/SUCCESS)
+  Process: 3987 ExecStartPre=/bin/mkdir -p /run/docker (code=exited, status=0/SUCCESS)
+ Main PID: 4003 (dockerd)
+    Tasks: 7
+   Memory: 37.8M
+   CGroup: /system.slice/docker.service
+           └─4003 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock --default-ulimit nofile=1024:4096
+
+May 22 07:32:13 ip-172-31-17-212.us-east-2.compute.internal dockerd[4003]: time="2021-05-22T07:32:13.357339919Z" level=info msg="scheme \"unix\" not registe...le=grpc
+May 22 07:32:13 ip-172-31-17-212.us-east-2.compute.internal dockerd[4003]: time="2021-05-22T07:32:13.357594642Z" level=info msg="ccResolverWrapper: sending ...le=grpc
+May 22 07:32:13 ip-172-31-17-212.us-east-2.compute.internal dockerd[4003]: time="2021-05-22T07:32:13.357903589Z" level=info msg="ClientConn switching balanc...le=grpc
+May 22 07:32:13 ip-172-31-17-212.us-east-2.compute.internal dockerd[4003]: time="2021-05-22T07:32:13.402923024Z" level=info msg="Loading containers: start."
+May 22 07:32:13 ip-172-31-17-212.us-east-2.compute.internal dockerd[4003]: time="2021-05-22T07:32:13.564395368Z" level=info msg="Default bridge (docker0) is...ddress"
+May 22 07:32:13 ip-172-31-17-212.us-east-2.compute.internal dockerd[4003]: time="2021-05-22T07:32:13.618032148Z" level=info msg="Loading containers: done."
+May 22 07:32:13 ip-172-31-17-212.us-east-2.compute.internal dockerd[4003]: time="2021-05-22T07:32:13.636365208Z" level=info msg="Docker daemon" commit=363e9...20.10.4
+May 22 07:32:13 ip-172-31-17-212.us-east-2.compute.internal dockerd[4003]: time="2021-05-22T07:32:13.636884622Z" level=info msg="Daemon has completed initialization"
+May 22 07:32:13 ip-172-31-17-212.us-east-2.compute.internal systemd[1]: Started Docker Application Container Engine.
+May 22 07:32:13 ip-172-31-17-212.us-east-2.compute.internal dockerd[4003]: time="2021-05-22T07:32:13.661032046Z" level=info msg="API listen on /run/docker.sock"
+Hint: Some lines were ellipsized, use -l to show in full.
+
+
+Docker volumes
+docker volume create hello
+docker ls
+DRIVER    VOLUME NAME
+local     hello
+docker volume inspect hello
+[
+    {
+        "CreatedAt": "2021-05-22T09:13:40Z",
+        "Driver": "local",
+        "Labels": {},
+        "Mountpoint": "/var/lib/docker/volumes/hello/_data",
+        "Name": "hello",
+        "Options": {},
+        "Scope": "local"
+    }
+docker volume rm hello
+hello
+
+Docker compose
+https://gist.github.com/npearce/6f3c7826c7499587f00957fee62f8ee9
+
+sudo curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   633  100   633    0     0   4984      0 --:--:-- --:--:-- --:--:--  4945
+100 11.2M  100 11.2M    0     0  17.9M      0 --:--:-- --:--:-- --:--:-- 17.9M
+[root@ip-172-31-17-212 bin]# https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+-bash: https://github.com/docker/compose/releases/latest/download/docker-compose-Linux-x86_64: No such file or directory
+[root@ip-172-31-17-212 bin]# sudo curl -L https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   152  100   152    0     0   1475      0 --:--:-- --:--:-- --:--:--  1475
+100   633    0   633    0     0   3617      0 --:--:-- --:--:-- --:--:--  3617
+100 12.1M  100 12.1M    0     0  17.0M      0 --:--:-- --:--:-- --:--:-- 29.4M
+[root@ip-172-31-17-212 bin]# sudo chmod +x /usr/local/bin/docker-compose
+[root@ip-172-31-17-212 bin]# docker-compose version
+docker-compose version 1.29.2, build 5becea4c
+docker-py version: 5.0.0
+CPython version: 3.7.10
+OpenSSL version: OpenSSL 1.1.0l  10 Sep 2019
+[root@ip-172-31-17-212 bin]#
+
+
+-------------------------------------------------------------
+
+421168438563.dkr.ecr.us-east-1.amazonaws.com/test:6
+
+docker pull srinadhdocker/springboohelloworldjenkinsci:4
+
+image: test:6
+
+- name: run container
+     docker:
+       insecure_registry: true
+       image: test:6
+       state: reloaded
+       pull: always
+       ports:
+        - "8080:8080"
+# return  docker login -u AWS -p <token> 
+   -name: dget docker command
+    shell: "aws ecr get-login --region {{ us-east-1 }}"
+    register: docker_login_command
+    
+   -name: docker login 
+    shell: "{{docker_login_command.output}}"
+
+Jenkins Installation
+
+# - name : start docker container
+   #   docker_container:
+   #     name : springboohelloworldjenkinsci
+        image: test:6
+       state: started
+        restart: yes
+        ports:
+         - "8888:8080"
+
+
+---
+- hosts : localhost
+  tasks :
+    - name : dget docker command
+      shell: "aws ecr get-login --region {{ us-east-1 }}"
+      register: docker_login_command
+    - name :  docker login
+      shell: "{{docker_login_command.output}}"
+~
+~
+~
+
+------------------------------------------------------------------------------------------
+
+
+https://wiki.jenkins.io/display/JENKINS//Installing+Jenkins+on+Red+Hat+distributions
+
+
+sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins.io/redhat/jenkins.repo
+sudo rpm --import http://pkg.jenkins.io/redhat/jenkins.io.key
+
+sudo amazon-linux-extras install epel -y
+sudo yum-config-manager --enable epel
+sudo yum install jenkins -y
+rpm -qa | grep jenkins
+jenkins-2.293-1.1.noarch
+service jenkins status
+jenkins.service - LSB: Jenkins Automation Server
+   Loaded: loaded (/etc/rc.d/init.d/jenkins; bad; vendor preset: disabled)
+   Active: inactive (dead)
+     Docs: man:systemd-sysv-generator(8)
+service jenkins start
+Starting jenkins (via systemctl):                          [  OK  ]
+[root@ip-172-31-17-212 yum.repos.d]# service jenkins status
+● jenkins.service - LSB: Jenkins Automation Server
+   Loaded: loaded (/etc/rc.d/init.d/jenkins; bad; vendor preset: disabled)
+   Active: active (running) since Sat 2021-05-22 07:47:45 UTC; 2s ago
+     Docs: man:systemd-sysv-generator(8)
+  Process: 4958 ExecStart=/etc/rc.d/init.d/jenkins start (code=exited, status=0/SUCCESS)
+    Tasks: 11
+   Memory: 153.2M
+   CGroup: /system.slice/jenkins.service
+           └─5011 /etc/alternatives/java -Dcom.sun.akuma.Daemon=daemonized -Djava.awt.headless=true -DJENKINS_HOME=/var/lib/jenkins -jar /usr/lib/jenkins/jenkins.w...
+
+May 22 07:47:44 ip-172-31-17-212.us-east-2.compute.internal systemd[1]: Starting LSB: Jenkins Automation Server...
+May 22 07:47:44 ip-172-31-17-212.us-east-2.compute.internal runuser[4996]: pam_unix(runuser:session): session opened for user jenkins by (uid=0)
+May 22 07:47:45 ip-172-31-17-212.us-east-2.compute.internal runuser[4996]: pam_unix(runuser:session): session closed for user jenkins
+May 22 07:47:45 ip-172-31-17-212.us-east-2.compute.internal jenkins[4958]: Starting Jenkins [  OK  ]
+May 22 07:47:45 ip-172-31-17-212.us-east-2.compute.internal systemd[1]: Started LSB: Jenkins Automation Server.
+
+ip:8080
+http://3.17.132.86:8080/
+
+
+yum install python -y
+Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+amzn2-core                                                                                                                                     | 3.7 kB  00:00:00
+Package python-2.7.18-1.amzn2.0.3.x86_64 already installed and latest version
+Nothing to do
+
+python --version
+Python 2.7.18
+
+amazon-linux-extras install epel
+yum -y install python-pip
+pip --version
+pip 9.0.3 from /usr/lib/python2.7/site-packages (python 2.7)
+
+Nodejs Installation
+--- Install Node.js 14 ---
+curl -sL https://rpm.nodesource.com/setup_14.x | sudo bash -
+
+--- Install Node.js 12 ---
+curl -sL https://rpm.nodesource.com/setup_12.x | sudo bash -
+
+--- Install Node.js 10 ---
+curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash -
+
+sudo yum install -y nodejs
+
+sudo yum -y install gcc-c++ make
+
+node -v
+v14.17.0
+
+npm -v
+6.14.13
+
+yum -y install nginx
+nginx -v
+nginx version: nginx/1.16.1
+service nginx status
+Redirecting to /bin/systemctl status nginx.service
+● nginx.service - The nginx HTTP and reverse proxy server
+   Loaded: loaded (/usr/lib/systemd/system/nginx.service; disabled; vendor preset: disabled)
+   Active: inactive (dead)
+
+May 22 08:58:18 ip-172-31-17-212.us-east-2.compute.internal systemd[1]: Unit nginx.service cannot be reloaded because it is inactive.
+[root@ip-172-31-17-212 ~]# service nginx start
+Redirecting to /bin/systemctl start nginx.service
+[root@ip-172-31-17-212 ~]# service nginx status
+Redirecting to /bin/systemctl status nginx.service
+● nginx.service - The nginx HTTP and reverse proxy server
+   Loaded: loaded (/usr/lib/systemd/system/nginx.service; disabled; vendor preset: disabled)
+   Active: active (running) since Sat 2021-05-22 09:04:17 UTC; 5s ago
+  Process: 4649 ExecStart=/usr/sbin/nginx (code=exited, status=0/SUCCESS)
+  Process: 4639 ExecStartPre=/usr/sbin/nginx -t (code=exited, status=0/SUCCESS)
+  Process: 4622 ExecStartPre=/usr/bin/rm -f /run/nginx.pid (code=exited, status=0/SUCCESS)
+ Main PID: 4656 (nginx)
+    Tasks: 2
+   Memory: 7.3M
+   CGroup: /system.slice/nginx.service
+           ├─4656 nginx: master process /usr/sbin/nginx
+           └─4659 nginx: worker process
+
+May 22 09:04:17 ip-172-31-17-212.us-east-2.compute.internal systemd[1]: Starting The nginx HTTP and reverse proxy server...
+May 22 09:04:17 ip-172-31-17-212.us-east-2.compute.internal nginx[4639]: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+May 22 09:04:17 ip-172-31-17-212.us-east-2.compute.internal nginx[4639]: nginx: configuration file /etc/nginx/nginx.conf test is successful
+May 22 09:04:17 ip-172-31-17-212.us-east-2.compute.internal systemd[1]: Failed to read PID from file /run/nginx.pid: Invalid argument
+May 22 09:04:17 ip-172-31-17-212.us-east-2.compute.internal systemd[1]: Started The nginx HTTP and reverse proxy server
+
+
+Elastic search installation
+https://www.elastic.co/guide/en/elasticsearch/reference/current/rpm.html#install-rpm
+yum install java-1.8.0-openjdk java-1.8.0-openjdk-devel -y
+wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.12.1-x86_64.rpm
+rpm -ivh elasticsearch-7.12.1-x86_64.rpm
+service elasticsearch status
+ cd /etc/elasticsearch
+vi elasticsearch.yml
+cluster name 
+node name 
+ip
+cluster.name: my-application
+node.name: node-1
+network.host: 0.0.0.0
+http.port: 9200
+discovery.seed_hosts: ["172.31.36.201"](private ip)
+cluster.initial_master_nodes: ["172.31.36.201"](private ip)
+service elasticsearch start
+netstat -plunt | grep :9200
+
+Ansible Installation 
+
+node-1 (client)
+
+ 
+    python (python has to be isntalled on both client and server machines
+    cd .ssh
+    ll
+    vi authorized_keys
+    ifconfig
+    java -version
+   
+
+
+Master 
+ python
+ amazon-linux-extras install ansible
+ amazon-linux-extras install ansible2
+ ansible --version
+ clear
+ ssh-keygen
+ cd /etc/ssh
+ ll
+ cd
+ ll /root/.ssh/id_rsa.pub.
+ ll /root/.ssh/id_rsa.pub
+ cd /etc/ssh/sshd_config
+ cat /root/.ssh/id_rsa.pub
+ clear
+ cd /etc/ansible
+ ll
+ vi hosts
+ vi setup-java
+ ll
+ rm -rf setup-java
+ ll
+ vi setup-java.yml
+ ansible-playbook --syntax-check setup-java.yml
+ ansible-playbook setup-java.yml   
+[root@node-1 ~]#
+
+
+
+Grafana Installation
+Install Grafana 6 on Ubuntu
+#########################
+1. Update system
+ sudo apt-get update
+ sudo apt-get upgrade
+2. Add Grafana 6 APT repository
+   Add Grafana gpg key which allows you to install signed packages.
+ sudo apt-get install -y gnupg2 curl
+ curl https://packages.grafana.com/gpg.key | sudo apt-key add -
+   Then install Grafana APT repository:
+ sudo add-apt-repository "deb https://packages.grafana.com/oss/deb stable main"
+   Once the repository is added, proceed to update your Apt repositories and install Grafana
+ sudo apt-get update
+ sudo apt-get -y install grafana
+   Start grafana service
+ sudo systemctl status grafana-server
+ netstat -plunt | grep :3000
+ sudo systemctl start grafana-server
+ sudo systemctl enable grafana-server
+Now open your browser and enter server IP address and port 3000
+http://ec2ip:3000
+Default logins are:
+ Username: admin
+ Password: admin
+ 
+ 
+Promotheus Installation
+https://prometheus.io/download/
+Setup Prometheus Binaries
+Step 1: Update the yum package repositories.
+
+sudo yum update -y
+Step 2: Go to official Prometheus downloads page and get the download link for Linux binary.
+Step 3: Create a Prometheus user, required directories, and make prometheus user as the owner of those directories.
+sudo useradd --no-create-home --shell /bin/false prometheus
+sudo mkdir /etc/prometheus
+sudo mkdir /var/lib/prometheus
+sudo chown prometheus:prometheus /etc/prometheus
+sudo chown prometheus:prometheus /var/lib/prometheus
+
+Step 4: Download the source using curl, untar it and rename the extracted folder to prometheus-files.
+https://github.com/prometheus/prometh...
+curl -LO https://github.com/prometheus/prometh...
+tar -xvf prometheus-2.3.2.linux-amd64.tar.gz
+mv prometheus-2.18.1.linux-amd64 prometheus-files
+Step 5: Copy prometheus and promtool binary from prometheus-files folder to /usr/local/bin and change the ownership to prometheus user.
+sudo cp prometheus-files/prometheus /usr/local/bin/
+sudo cp prometheus-files/promtool /usr/local/bin/
+sudo chown prometheus:prometheus /usr/local/bin/prometheus
+sudo chown prometheus:prometheus /usr/local/bin/promtool
+
+Step 6: Move the consoles and console_libraries directories from prometheus-files to /etc/prometheus folder and change the ownership to prometheus user.
+
+sudo cp -r prometheus-files/consoles /etc/prometheus
+sudo cp -r prometheus-files/console_libraries /etc/prometheus
+sudo chown -R prometheus:prometheus /etc/prometheus/consoles
+sudo chown -R prometheus:prometheus /etc/prometheus/console_libraries
+
+Setup Prometheus Configuration
+All the prometheus configurations should be present in /etc/prometheus/prometheus.yml file.
+
+Step 1: Create the prometheus.yml file.
+
+sudo vi /etc/prometheus/prometheus.yml
+
+Step 2: Copy the following contents to the prometheus.yml file.
+
+global:
+  scrape_interval: 10s
+
+scrape_configs:
+  - job_name: 'prometheus'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['localhost:9090']
+
+Step 3: Change the ownership of the file to prometheus user.
+sudo chown prometheus:prometheus /etc/prometheus/prometheus.yml
+
+Setup Prometheus Service File
+Step 1: Create a prometheus service file.
+
+sudo vi /etc/systemd/system/prometheus.service
+
+Step 2: Copy the following content to the file.
+
+sudo chown prometheus:prometheus /etc/prometheus/prometheus.yml
+
+Setup Prometheus Service File
+Step 1: Create a prometheus service file.
+
+sudo vi /etc/systemd/system/prometheus.service
+
+Step 2: Copy the following content to the file.
+
+[Unit]
+Description=Prometheus
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+User=prometheus
+Group=prometheus
+Type=simple
+ExecStart=/usr/local/bin/prometheus \
+    --config.file /etc/prometheus/prometheus.yml \
+    --storage.tsdb.path /var/lib/prometheus/ \
+    --web.console.templates=/etc/prometheus/consoles \
+    --web.console.libraries=/etc/prometheus/console_libraries
+
+[Install]
+WantedBy=multi-user.target
+Step 3: Reload the systemd service to register the prometheus service and start the prometheus service.
+
+sudo systemctl daemon-reload
+sudo systemctl start prometheus
+netstat -plunt | grep :9090
+
+Check the prometheus service status using the following command.
+
+sudo systemctl status prometheus
+
+Access Prometheus Web UI
+Now you will be able to access the prometheus UI on 9090 port of the prometheus server.
+
+http:ec2serverip:9090/graph
+Right now we have just configured prometheus. You need to register the target in the prometheus.yml file to get the metrics from the source systems.
+
+-------
+
+
+Terraform Installation
+
+https://www.terraform.io/downloads.html
+mkdir Terraform 
+cd Terraform
+wget https://releases.hashicorp.com/terraform/0.15.4/terraform_0.15.4_linux_amd64.zip
+unzip terraform_0.15.4_linux_amd64.zip
+vi /etc/profile.d/terraform.sh
+export Terraform_HOME=/root/Terraform
+export PATH=$PATH:$Terraform_HOME
+source /etc/profile.d/terraform.sh
+or 
+cp terraform /usr/bin/
+terraform -v 
+Terraform v0.15.4
+on linux_amd64
+
+
+---------------------
+Kafka Installation (quick start https://kafka.apache.org/quickstart)
+cd /opt
+https://kafka.apache.org/downloads
+wget https://archive.apache.org/dist/kafka/2.4.1/kafka_2.12-2.4.1.tgz
+tar -xvf kafka_2.12-2.4.1.tgz
+cd kafka_2.12-2.4.1/
+cd bin
+cd ..
+nohup bin/zookeeper-server-start.sh config/zookeeper.properties &  
+jps
+ps -aux | grep java
+nohup bin/kafka-server-start.sh config/server.properties &
+jps
+bin/kafka-topics.sh --create --topic quickstart-events --bootstrap-server localhost:9092
+bin/kafka-topics.sh --describe --topic quickstart-events --bootstrap-server localhost:9092
+bin/kafka-console-producer.sh --topic quickstart-events --broker-list  localhost:9092
+cd /opt/kafka_2.12-2.4.1
+[root@ip-172-31-43-244 kafka_2.12-2.4.1]# bin/kafka-console-consumer.sh --topic quickstart-events --from-beginning --bootstrap-server localhost:9092
+
+
+
+
+vault_1.4.0_linux_amd64
+
+https://releases.hashicorp.com/vault/1.7.2/vault_1.7.2_linux_amd64.zip
+

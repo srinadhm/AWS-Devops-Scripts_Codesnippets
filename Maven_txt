@@ -1,0 +1,223 @@
+Master
+Develop
+Feature
+Release
+Hotfix
+-----------------
+what is build tool
+different build tools (maven,gradle,ant)
+how many ways to create java project
+spring.io
+ide 
+command line 
+how to build spring boot or java project ----- mvn clean install or mvn clean package
+maven different life cycle phases
+mvn clean --- download all dependencies and clean the project
+mvn install --- build the project and generate jar/war file based on the packaging tag in pom.xml by generating new folder target (all the spring boot projects by default extension is jar)
+
+jar name ---- demo-project-0.0.1-SNAPSHOT.jar
+
+<artifact name>-<snapshot version>.<packaging>
+
+<artifactId>demo-project</artifactId>-<version>0.0.1-SNAPSHOT</version>.jar
+
+we can define our own jar file name by adding <finalName> tag under buildtag 
+
+spring boot project default packaging will be jar we can change it to war 
+
+how to run a jar file
+
+java -jar <jar file name>
+
+for every spring boot application it has default embedded severs like tomcat we can configure jetty as well
+tomcat runs on 8080 
+if 8080 already runs on another tomcat server or jenkins we have to change port number  under main/resources/application.properties with server.port=9999
+
+how to run project in different envs like dev qa/tesing staging/uat and prod
+application.properties
+application-dev.properties
+application-qa.properties
+application-uat.properties
+application-prod.prop
+
+java -jar <jarfilename> -Dspring.profiles.active=dev/qa/uat/prod
+
+ 
+1.clone the repo from git
+2.build the project using maven
+3.run the jar/war file
+
+we need to do above tasks using jenkins ( by integrating git and maven plugins or setting git,java path)
+
+In jenkins 
+
+types of jenkins job 
+1.free style ( we can develop any projects , master slave configuration wont applicable)
+2.pipeline( declarative and scipted )
+3.maven project ( we need to add maven plugin to create a maven project)
+
+declarative pipeline 
+pipeline{
+}
+in order to run the pipeline we need an agent, if we dont have slave agents or slave labels only jenkins master is present
+we can mention agent as any 
+and each pipeline had lot of stages 
+each stage had lot of steps
+--------------
+if we want to run jenkins job if someone commits or change something in github
+what if we want to run the job on slave machine
+
+for scripted pipeline it starts with node
+we should not directly run java -jar jarfile name 
+before that we need to check our code is good quality or bad quality
+as some one  commits the code we need to run this analysis
+for this we need to integate with sonarqube
+if the code quality is good we need those artifacts in jfrog or nexus or amazons3
+if the code quality is bad we need to fail the build
+how to integrate maven project with sonarqube
+how to deploy maven project to nexus
+we need to integrate nexus and sonarqube to jenkins
+
+regardless of job pass or fail we need to send email notification to job owner or stakeholders
+
+we cannot run nexus as root user change the permissions for ec2-user 
+
+1.get the code from github
+2.build the code
+3.analyse the code
+4.get the results of code analysis
+5.if success upload the artifacts to nexus/jfrog
+6.based on result decide to pass or fail and send email notification if failure 
+
+-------------------------------
+
+if we want to do code quality analysis of any maven project we need to integrate with sonar qube
+in order to integrate with sonarqube we need to know about sonar token 
+without sonar token we cant do analysis
+we can integrate gradle with sonarqube
+python with sonarqube
+nodejs with sonarqube
+sonarqube 7 --- > java 8
+sonarqube 8 --- > java 11
+needs 2 vcpus and required instance t2.medium
+checkout   build the project   run the sonarqube for analysis quallity gate deploy to nexus
+git ---- maven ---- sonarqube ---- nexus 
+
+after sonarqube integration is done we need to install nexus and deploy java project using maven to nexus
+
+mvn deploy --- we need to mention nexus url under distribution management
+
+we need to mention nexus repository location, snapshot repository url and release repository url 
+in pom.xml version is snapshot it will go to nexus snapshot repository
+without snapshot it will go to nexus snapshot repository
+
+we need to mention nexus username,password,id element in /opt/apache-maven-3.8.1/conf.settings.xml
+
+nexus port number ---- 8081
+sonarqube port number ---- 9000
+tomcat/jenkins port number ---- 8080
+
+maven sonarqube plugin ---- https://www.baeldung.com/sonar-qube
+spring boot slf4j logging ---- https://mkyong.com/spring-boot/spring-boot-slf4j-logging-example/
+Install nexus3 on centos/redhat/amazon linux https://devopscube.com/how-to-install-latest-sonatype-nexus-3-on-linux/
+Install java11 on Amazon linux2 https://docs.aws.amazon.com/corretto/latest/corretto-11-ug/amazon-linux-install.html
+Deploy maven project to nexus https://www.baeldung.com/maven-deploy-nexus
+http://maven.apache.org/ref/3.8.1/maven-core/lifecycles.html
+
+
+quality profile vs quality gates in sonarqube 
+we can attach quality gates to quality profile
+mvn clean install
+mvn clean package
+mvn dependency:tree
+mvn deploy 
+mvn life cycle phases
+
+ci --- with and without docker
+cd --- with and without docker and kubernetes
+anisble
+
+we need to do ci for java project
+continuous integration
+1.get the code from github
+2.build the code 
+3.we need to run the final artifacts jar/war
+
+----------------------
+
+how to trigger jenkins job if someone commits code or raise pull request in git.
+
+Project 1
+=========
+Please Develop a role in Ansible to create 2 tier Architecture with AWS Load Balancer & Amazon Linux (1 web & 1 App(tomcat)) machines with health strings to setup Web & App layers with sample applications with Reverse Proxy.
+
+The Role should accept arguments with number of EC2 machines to be created and JDK version to be installed. 
+Write separate playbooks for LB, Web, App, Proxy & JDK installation with variables.
+
+========
+Project 2:
+========
+Please Create Job in Jenkins to develop an application and deploy in Docker Swarm.
+a) Use separate Maven Image to Build.
+b) Use docker hub to store the Images.
+c) Use docker stack to deploy the images into Docker Swarm.
+
+
+[10:28 AM, 6/29/2021] Vam Bro1: 1) how to install os depended task?
+   node1: RHEL
+   node2: Ubuntu
+
+
+2) how to create a user using ansible?
+3) how to change folder permissions or ownership using ansible?
+4) how to create a file using jinja template using ansible?
+   how to create tomcat as a service and run tomcat service using ansible?
+5) how to install sonarqube using ansible?
+6) how to download artifacts from nexus using ansible?[assume already we had war in nexus]
+7) how to install multiple packages at once using ansible?
+8) how to set environment variables using ansible?
+[10:28 AM, 6/29/2021] Vam Bro1: #############################
+1.how to check java is already there or not what is the java home path
+2.install java only when it is not there
+3.how to run tomcat as a service using ansible playbook
+4.how to install postgresql using ansible playbook
+5.how to do backup and restore of postgresql using ansible playbook
+
+https://github.com/Naresh240/ansible_tomcat_reverseproxy_with_apache_elb
+
+https://github.com/Naresh240/jenkins_docker_swarm_deploy
+
+
+
+
+
+
+
+<distributionManagement>
+   <snapshotRepository>
+      <id>maven-snapshots</id>
+      <url>http://54.87.44.29:8081/repository/maven-snapshots/</url>
+   </snapshotRepository>
+   <repository>
+      <id>maven-releases</id>
+      <url>http://54.87.44.29:8081/repository/maven-releases/</url>
+   </repository>
+</distributionManagement>
+
+
+    <server>
+      <id>maven-snapshots</id>
+      <username>admin</username>
+      <password>srinadh</password>
+    </server>
+    
+    <server>
+      <id>maven-releases</id>
+      <username>admin</username>
+      <password>srinadh</password>
+    </server>
+	
+	
+	7729952830 madhu
+    
+

@@ -1,0 +1,157 @@
+######################
+elastic bean stalk
+cloudtrail
+cloudfront
+
+###################
+automation
+####################
+terraform
+coudformation templates
+#########################
+elastic bean stalk###
+we used create a server
+on that server we user to install
+
+git
+java 
+maven and run our apps
+
+#########################
+you dont create any server urself
+dont install any softwares urself
+platform as a service
+#################################
+just need to make ur jar file and war file ready
+rest all deployment is taken care by elastic beanstalk
+
+######################
+build project store jar file or war ffile in amazon s3
+############################################
+
+to build project we need server
+##################################
+1.git
+2.java
+3.maven
+#######################
+
+
+i need permission fro ec2 instance to acccess s3 
+i want to store my jar files in s3 bucket
+
+we can create iam user or iam role
+attach this role to ec2 instance
+
+https://s3.console.aws.amazon.com/s3/object/project1-app1-artifacts?region=us-east-1&prefix=helloworld-1.0-SNAPSHOT.jar
+https://s3.console.aws.amazon.com
+https://s3.us-east-1.amazonaws.com/project1-app1-artifacts/helloworld-1.0-SNAPSHOT.jar
+
+
+
+
+
+
+##########
+i am creating ec2 instance manually
+but in projects we should never create any aws resource manaully
+it should be form aws terraform or cloudforamtion
+#####################################
+
+we need to download and configure with aws authentication
+1.create iam user or iam role
+#####################################
+with ec2 full access if you want to crated automatically
+s3fullccess automate s3
+
+#########################
+
+
+access_key = "AKIAYX7YMD5HJSGY4Z4W"
+secret_key = "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"
+
+
+resource "aws_s3_bucket" "b" {
+  bucket = "vamsi-tf-test-bucket-may23"
+  acl    = "private"
+
+  tags = {
+    Name        = "My bucket"
+    Environment = "Dev"
+  }
+}
+
+#######
+data "aws_ami" "ubuntu" {
+  most_recent = true
+
+  filter {
+    name   = "name"
+    values = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]
+  }
+
+  filter {
+    name   = "virtualization-type"
+    values = ["hvm"]
+  }
+
+  owners = ["099720109477"] # Canonical
+}
+
+resource "aws_instance" "web" {
+  ami           = data.aws_ami.ubuntu.id
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "HelloWorld"
+  }
+}
+
+
+Amazon Linux 2 AMI (HVM), SSD Volume Type - ami-077e31c4939f6a2f3 (64-bit x86) / ami-07a3e3eda401f8caa (64-bit Arm)
+Red Hat Enterprise Linux 8 (HVM), SSD Volume Type - ami-0ba62214afa52bec7 (64-bit x86) / ami-09f8674883d0ad6b8 (64-bit Arm)
+
+------
+
+https://kafka.apache.org/quickstart
+
+
+Kafka Arhcitecture
+zookeeper and kafka services has to be started 
+
+publish sunscribe
+rabbitmq               kafka 
+queue/routing key      topic
+queue is point-point
+topic is --- 1-many 
+applications
+
+java
+python
+dotnet
+nodejs 
+
+
+application will send messages to topic that is called producer(without application also we can send messages with kafka-console-producers cli commands
+application will read messages from topic that is called consumer(without application also we can read messages with kafka-console-consumers cli commands
+
+Producer
+-------
+bin/kafka-topics.sh --create --topic quickstart-events --bootstrap-server localhost:9092   (create a topic kafka boot server port number : 9092)
+bin/kafka-console-producer.sh --topic quickstart-events --bootstrap-server localhost:9092 
+This is my first event
+This is my second event
+Consumer
+-------
+bin/kafka-console-consumer.sh --topic quickstart-events --from-beginning --bootstrap-server localhost:9092
+
+
+--------
+AWS MSK (Amazon Managed Streaming for Apache Kafka)
+Create 3 ec2 instances 
+Install Kafka
+add other ec2 instances to the main or master ec2 instance
+
+Devops role will be if they are using aws msk using terrafrom we can create aws msk 
+if they are using kafka we can use ansible template or shell script to install kafka (manage infrastructure)
+
